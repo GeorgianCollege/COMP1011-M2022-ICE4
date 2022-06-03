@@ -10,7 +10,6 @@ import java.util.ResourceBundle;
 
 public class Vector2DTableViewController implements Initializable
 {
-
     @FXML
     private TableView<Vector2D> tableView;
 
@@ -27,6 +26,11 @@ public class Vector2DTableViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
-
+        var vectors = DBManager.Instance().readVectorTable();
+        System.out.println("Vector2D Data:");
+        for (var vector: vectors)
+        {
+            System.out.println(vector);
+        }
     }
 }
